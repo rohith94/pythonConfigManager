@@ -7,19 +7,19 @@ class LocalTest:
     def __init__(self):
         self.configReader = ConfigManager()
 
-    def myfunction(self):
+    def my_function(self):
         self.configReader.read("foldertest/application.config")
-        filename = self.configReader.getPropertyValue("log", "log_file_name")
-        deguglevel = self.configReader.getPropertyValue("log", "log_level_debug")
-        ftp_value = self.configReader.getPropertyValue("ftp", "ftp_host")
+        file_name = self.configReader.get_property_value("log", "log_file_name")
+        degug_level = self.configReader.get_property_value("log", "log_level_debug")
+        ftp_value = self.configReader.get_property_value("ftp", "ftp_host")
         to_cc_email_is = ast.literal_eval(
-            self.configReader.getPropertyValue('emails', 'to.cc.email.ids.list'))
-        print(filename, deguglevel, ftp_value, to_cc_email_is)
+            self.configReader.get_property_value('emails', 'to.cc.email.ids.list'))
+        print(file_name, degug_level, ftp_value, to_cc_email_is)
         print(len(to_cc_email_is))
         for a in to_cc_email_is:
             print(a)
 
 
 def xyz():
-    testinstance = LocalTest()
-    testinstance.myfunction()
+    test_instance = LocalTest()
+    test_instance.my_function()
